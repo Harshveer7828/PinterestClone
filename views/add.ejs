@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        height: 100%;
+        width: 100%;
+        font-family: gilroy;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    form {
+        height: 50vh;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    form input {
+        border: none;
+        font-size: 1vw;
+        padding: 0.7vw 0.3vw;
+        background-color: white;
+        margin: 5px;
+        border-radius: 5px;
+        top: 50%;
+        border: 1px solid rgb(59, 57, 57);
+    }
+
+    form input:focus {
+        box-shadow: 0px -7px 3px -2px rgba(15, 91, 231, 0.4),
+            0px 7px 3px -2px rgba(15, 91, 231, 0.4),
+            7px 0px 3px -2px rgba(15, 91, 231, 0.4),
+            -7px 0px 3px -2px rgba(15, 91, 231, 0.4);
+        outline: none;
+    }
+
+    #submit-btn {
+        background-color: rgb(244, 48, 87);
+        color: white;
+        font-weight: 100;
+        font-size: 1.2vw;
+        padding: 0.5vw 1vw;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type='file'] {
+        color: white;
+        border: none;
+        margin-left: 12vw;
+    }
+
+    input[type='file']:focus {
+        border: none;
+        box-shadow: 0 0 0 0 white;
+    }
+
+    h1 {
+        font-weight: 100;
+        margin-top: 5vw;
+    }
+
+    h1 span {
+        color: rgb(244, 48, 87);
+        font-family: gilroy;
+        font-weight: 900;
+    }
+</style>
+
+<body>
+    <h1>CREATED A NEW <span>POST</span></h1>
+    <hr>
+    <form method="post" action="/createpost" enctype="multipart/form-data">
+        <input type="file" placeholder="upload File" name="postimage">
+        <input type="text" placeholder="Title" name="title" id="">
+        <textarea placeholder="Description" cols="30" rows="5" name="description"></textarea>
+        <input id="submit-btn" type="submit" value="Create Post">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest-Like Profile Page</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/pinterest-round-color-icon.png" class="icon pinterest-icon">
+        <div class="right">
+            <a href="/feed">Feeds</a>
+            <a id="logout-btn" href="/logout">Logout</a>
+            <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt="https://t3.ftcdn.net/jpg/03/46/83/96/240_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"></a>
+        </div>
+    </div>
+    <div class="profile-container">
+        <div class="profile-info">
+            <form id="upload-file-form" hidden action="/fileupload" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" id="">
+            </form>
+            <i class="ri-pencil-line"></i>
+            <img src="/images/uploads/<%=user.profileImage%>">
+            <div>
+                <h2><%=user.username%></h2>
+                <p><%=user.email%></p>
+                <input type="button" value="Account setting">
+            </div>
+        </div>
+
+        <h2>Your Pins</h2> 
+        <a id="uploadPost" href="/add"><i class="ri-add-box-fill">New post</i></a>
+
+        <div class="grid-container">
+            <% user.post.forEach(function(dets){ %>
+                <div class="pin">
+                    <img src="/public/images/uploads/<%=dets.image%>">
+                </div>
+            <%}) %>
+
+            <!-- Add more pins as needed -->
+
+        </div>
+
+    </div>
+    <script>
+        document.querySelector(".ri-pencil-line")
+        .addEventListener("click",function(){
+            document.querySelector("#upload-file-form input").click();
+        })
+        document.querySelector("#upload-file-form input").addEventListener("change",function(){
+            document.querySelector("#upload-file-form").submit();
+        });
+    </script>
+</body>
+
+</html>

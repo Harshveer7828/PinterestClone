@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <title>Pinteresting | Gallery Layout</title>
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+</head>
+<!-- A Simple non functional Pinterest inspired page layout created using only HTML and CSS.
+       Created by M. Hassler - Hassified -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<body>
+
+  <div class="header">
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/pinterest-round-color-icon.png" class="icon pinterest-icon">
+    <ul class="navigation">
+      <li>Home</li>
+      <li>Explore</li>
+      <li>Create</li>
+    </ul>
+    <div class="search-bar">
+      <i class="ri-search-line"></i>
+      <input type="text" placeholder="Search">
+    </div>
+    <div class="nav-icons">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-icon.png" class="icon nav-icon">
+      <img src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/speech-bubble-black-icon.png" class="icon nav-icon">
+      <a  href="/profile"><img src="/images/uploads/<%=user.profileImage%>" class="icon nav-icon arrow-icon">
+      </a>
+    </div>
+  </div>
+  <div class="grid">
+    <% post.forEach(function(dets){%>
+      <div class="grid-item">
+        <img src="/images/uploads/<%=dets.image%>" />
+      </div>
+      <%}) %>
+      
+  </div>
+  <script>
+    $(".grid").imagesLoaded(function() {
+      $(".grid").masonry({
+        itemSelector: ".grid-item"
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+Data Association:- 
+->ek model se doosre model ka data ko jod dena id ke through.Done between the 2 models
