@@ -38,7 +38,9 @@
         <div class="grid-container">
             <% user.post.forEach(function(dets){ %>
                 <div class="pin">
-                    <img src="/public/images/uploads/<%=dets.image%>">
+                    <a href="/post/<%=dets.image%>">
+                        <img src="/public/images/uploads/<%=dets.image%>">
+                    </a>
                 </div>
             <%}) %>
 

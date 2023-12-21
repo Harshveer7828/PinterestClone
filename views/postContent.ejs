@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kcnhkjbksj</title>
+    <link rel="stylesheet" href="/stylesheets/postContent.css">
+</head>
+<body>
+    <div id="main">
+        <div class="navbar">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/pinterest-round-color-icon.png" class="icon pinterest-icon">
+            <div class="right">
+                <a href="/feed">Feeds</a>
+                <a id="logout-btn" href="/logout">Logout</a>
+                <a href="/profile"><img src="/images/uploads/<%=user.profileImage%>" alt="https://t3.ftcdn.net/jpg/03/46/83/96/240_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg"></a>
+            </div>
+        </div>
+        <div class="post-container">
+           <div class="image-container"><img src="/public/images/uploads/<%=userid%>" alt="ere"></div>
+            <div class="buttons">
+                <button><a href="#">Edit post</a></button>
+                <button><a href="#">Delete Post</a></button>
+            </div>
+            <h1><%=user.username%></h1>
+            <p><%=user.post.description%></p>
+        </div>
+    </div>
+</body>
+</html>

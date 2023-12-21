@@ -105,6 +105,15 @@ img:hover {
   padding: 5px;
   box-sizing: border-box;
   display: inline;
+  font-family: gilroy;
+}
+
+.grid-item h3{
+  color: #000000;
+  display: block;
+  font-family: gilroy;
+  color: #e60022;
+  font-size: 2vw;
 }
 
 @media (max-width: 600) {

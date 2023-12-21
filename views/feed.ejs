@@ -39,6 +39,8 @@
     <% post.forEach(function(dets){%>
       <div class="grid-item">
         <img src="/images/uploads/<%=dets.image%>" />
+        <h3><%=dets.user.fullname%></h3>
+        <h2><%=dets.user.username%></h2>
       </div>
       <%}) %>
       

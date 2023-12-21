@@ -95,7 +95,8 @@ header {
     background-color: #09090955;
     transition: all ease 0.3s;
     opacity: 0;
-}.pin:hover::after{
+}
+.pin:hover::after{
     opacity: 1;
 }
 
@@ -149,6 +150,11 @@ header {
 #uploadPost{
     text-decoration: none;
     color: black;
+}
+
+.pin a{
+  position: relative;
+  z-index: 99999;
 }
 
 @media (width<600) {

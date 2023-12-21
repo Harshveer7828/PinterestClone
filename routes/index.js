@@ -47,7 +47,6 @@ router.post("/createpost",isLoggedIn,upload.single("postimage"),async function (
   user.post.push(post._id);
   await user.save();
   res.redirect('/profile');
-  console.log(user)
 });
 
 // multer code
@@ -57,6 +56,12 @@ const user= await userModel.findOne({username:req.session.passport.user})
   user.profileImage=req.file.filename;
   await user.save();
   res.redirect('/profile')
+});
+router.get("/post/:userid", isLoggedIn,async function (req, res, next) {
+const user= await userModel.findOne({username:req.session.passport.user})
+const post=await postModel.findOne({username:req.session.passport.user})
+.populate("user");
+  res.render('postContent',{user,userid:req.params.userid,post});
 });
 
 
