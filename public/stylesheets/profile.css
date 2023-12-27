@@ -80,9 +80,9 @@ header {
 
 .pin img {
   width: 100%;
-  height: auto;
-  display: block;
   height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .pin::after{
@@ -313,6 +313,7 @@ header {
     top: 42%;
     left: 33%;
     cursor: pointer;
+    font-family: gilroy;
   }
   
   #uploadPost {

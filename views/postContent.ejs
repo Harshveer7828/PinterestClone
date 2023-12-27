@@ -19,11 +19,11 @@
         <div class="post-container">
            <div class="image-container"><img src="/public/images/uploads/<%=userid%>" alt="ere"></div>
             <div class="buttons">
-                <button><a href="#">Edit post</a></button>
-                <button><a href="#">Delete Post</a></button>
+                <button id="edit-btn"><a href="#">Edit post</a></button>
+                <button><a href="/delete/<%=userid%>">Delete Post</a></button>
             </div>
             <h1><%=user.username%></h1>
-            <p><%=user.post.description%></p>
+            <p><%=post.description%></p>
         </div>
     </div>
 </body>
