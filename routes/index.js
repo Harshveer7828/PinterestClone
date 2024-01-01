@@ -70,15 +70,14 @@ router.get("/post/:userid", isLoggedIn, async function (req, res, next) {
     .findOne({ username: req.session.passport.description })
     .populate("user");
     res.render("postContent", { user, userid: req.params.userid, post });
-    console.log(post);
+  
 });
 
 // search and delete the post from the postcontent 
 router.get("/delete/:userid", isLoggedIn, async function (req, res, next) {
-  const user = await userModel.findOne({ username: req.session.passport.user });
   const post = await postModel
-    .findOneAndDelete({ postimage: req.session.passport.post });
-    res.render("profile",{ user, userid: req.params.userid, post });
+    .findOneAndDelete({ postimage:req.session.passport.post});
+    res.redirect('/profile');
 });
 
 // passport default code

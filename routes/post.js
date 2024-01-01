@@ -17,7 +17,6 @@ const postSchema = new mongoose.Schema({
         type: Array,
         default:[]
     },
-
 });
 
 // Create the Post model
