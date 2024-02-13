@@ -19,7 +19,7 @@ router.get("/profile", isLoggedIn, async function (req, res, next) {
   const user = await userModel
     .findOne({ username: req.session.passport.user })
     .populate("post");
-  res.render("profile", { user });
+  res.render("profile", { user });  
 });
 router.get("/login", function (req, res, next) {
   res.render("login");
